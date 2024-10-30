@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting...</title>
+    <script>
+        function redirectToWhatsApp() {
+            // URL que queremos redirecionar
+            const whatsappURL = "https://chat.whatsapp.com/LftEP7ZBmTNA8beDIFXLp8";
+            
+            // Verifica se está dentro do navegador do Instagram
+            const isInstagram = navigator.userAgent.includes("Instagram");
+
+            if (isInstagram) {
+                // Abre o URL do WhatsApp no navegador padrão
+                window.location = `intent://send?phone=${whatsappURL}#Intent;scheme=https;package=com.android.chrome;end`;
+            } else {
+                // Se não estiver no Instagram, redireciona normalmente
+                window.location.href = whatsappURL;
+            }
+        }
+    </script>
+</head>
+<body onload="redirectToWhatsApp()">
+    <p>Redirecionando para o WhatsApp...</p>
+</body>
+</html>
